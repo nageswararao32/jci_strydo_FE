@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <div>
+        <div class="title">JCI MarketPlace</div>
+        <div>Receipt ID: ORD-[[${orderId}]]</div>
+    </div>
+
+    <div class="status">
+        [[${paymentStatus}]]
+    </div>
+</div>
+
+<hr/>
+
+<div class="section">
+    <b>Transaction Date:</b> [[${date}]]<br/>
+    <b>Transaction ID:</b> TXN-[[${orderId}]]
+</div>
+
+<div class="section">
+    <b>Customer:</b> Buyer ID [[${buyerId}]]
+</div>
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Total</th>
+    </tr>
+
+    <tr th:each="item : ${items}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.qty}"></td>
+        <td th:text="${item.total}"></td>
+    </tr>
+</table>
+
+<div class="total">
+    Subtotal: [[${subtotal}]] <br/>
+    Tax: [[${tax}]] <br/>
+    <b>Total: [[${finalTotal}]]</b>
+</div>
+
+<br/><br/>
+
+<div>
+    Thank you for your purchase!
+</div>
+
+</body>
+</html>
