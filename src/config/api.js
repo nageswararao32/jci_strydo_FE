@@ -38,6 +38,7 @@ export const API = {
   GET_BUYER_SUMMARY: (buyerId) => `${API_BASE_URL}/service-orders/buyer/${buyerId}/summary`,
   GET_SELLER_EARNINGS: (sellerId) => `${API_BASE_URL}/service-orders/seller/${sellerId}/earnings`,
   GET_PAID_PAYMENTS: `${API_BASE_URL}/service-orders/payments/paid`,
+  GET_SERVICE_RECEIPT: (orderId) => `${API_BASE_URL}/service-orders/receipt/${orderId}`,
   GET_ORDER_PAYMENTS: `${API_BASE_URL}/orders/payments`,
   GET_SINGLE_ORDER_PAYMENT: (orderId) => `${API_BASE_URL}/orders/payments/${orderId}`,
   GET_ORDER_RECEIPT: (orderId) => `${API_BASE_URL}/orders/receipt/${orderId}`,
@@ -56,7 +57,7 @@ export const API = {
   UPDATE_ORDER_STATUS: (orderId, status) => `${API_BASE_URL}/orders/status/${orderId}?status=${status}`,
   CANCEL_ORDER: (orderId) => `${API_BASE_URL}/orders/cancel/${orderId}`,
   GET_SELLER_ORDERS: (sellerId) => `${API_BASE_URL}/orders/seller/${sellerId}`,
-  GET_ALL_ORDERS: `${API_BASE_URL}/orders/all`,
+  GET_ALL_ORDERS: `${API_BASE_URL}/orders`,
 
   // Add this line
   PAY_ORDER: (orderId) => `${API_BASE_URL}/orders/pay/${orderId}`,

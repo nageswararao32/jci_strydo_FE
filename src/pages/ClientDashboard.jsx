@@ -818,7 +818,7 @@ export default function ClientDashboard() {
 
   const downloadReceipt = async (booking) => {
     try {
-      const res = await fetch(`http://localhost:8080/service-orders/receipt/${booking.orderId}`, {
+      const res = await fetch(API.GET_SERVICE_RECEIPT(booking.orderId), {
         headers: {
           'Authorization': `Bearer ${sessionStorage.getItem('token') || ''}`,
         }
